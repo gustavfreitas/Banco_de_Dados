@@ -1,10 +1,10 @@
--- 8 - Quantos funcion·rios est„o em cada profiss„o? Agrupe por JobId.
-SELECT COUNT(*) AS DISTRUI«√O_DE_FUNCION¡RIOS_POR_SETOR
+-- 8 - Quantos funcion√°rios est√£o em cada profiss√£o? Agrupe por JobId.
+SELECT COUNT(*) AS DISTRUI√á√ÉO_DE_FUNCION√ÅRIOS_POR_SETOR
 FROM Employee
 group by job_id
 
--- 9 - Qual o preÁo do livro mais barato de cada tipo?
-SELECT MIN(PRICE) AS MENOR_PRE«O, type
+-- 9 - Qual o pre√ßo do livro mais barato de cada tipo?
+SELECT MIN(PRICE) AS MENOR_PRE√áO, type
 FROM TITLES
 GROUP BY type
 
@@ -19,8 +19,8 @@ FROM titles
 GROUP BY pubdate
 ORDER BY pubdate ASC
 
--- 12 (Hard) - Crie uma relaÁ„o que mostra quantos livros comeÁam com cada letra.
+-- 12 (Hard) - Crie uma rela√ß√£o que mostra quantos livros come√ßam com cada letra.
 SELECT UPPER(SUBSTRING(title, 1,1)) AS LETRA_INICIAL, COUNT(*) AS TOTAL
 FROM titles
-GROUP BY title
-ORDER BY title
+GROUP BY UPPER(SUBSTRING(title, 1,1))
+ORDER BY LETRA_INICIAL
