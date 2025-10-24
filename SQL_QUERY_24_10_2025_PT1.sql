@@ -1,5 +1,5 @@
 -- 0 - Quantos dias se passaram desde o seu nascimento?
-SELECT DATEDIFF(DAY,'20041121',GETDATE()) AS 'Cálculo_Dias_de_Vida'
+SELECT DATEDIFF(DAY,'20041121',GETDATE()) AS 'CÃ¡lculo_Dias_de_Vida'
 
 -- 1 - Qual o peso do pokemon mais pesado?
 SELECT MAX(peso) as Peso_Pokemon, nome
@@ -18,8 +18,8 @@ WHERE peso <= 10
 group by nome
 ORDER BY Peso_Pokemon DESC
 
--- 4 - Qual a altura média dos pokemons da categoria 160?
-SELECT AVG(altura) as Altura_Média
+-- 4 - Qual a altura mÃ©dia dos pokemons da categoria 160?
+SELECT AVG(altura) as Altura_MÃ©dia
 from Pokemon
 where codCategoria = '160'
 
@@ -27,14 +27,16 @@ where codCategoria = '160'
 SELECT MIN(altura) as Menor_Altura
 from Pokemon
 
--- 6 - Liste todos os pokemons e o cáculo do seu IMC começando pelo maior.
+-- 6 - Liste todos os pokemons e o cÃ¡culo do seu IMC comeÃ§ando pelo maior.
 SELECT *, (peso / (altura * altura)) AS CALCULO_IMC
 FROM POKEMON
+ORDER BY CALCULO_IMC DESC
 
--- 7 - Qual o peso médio e a altura média de cada categoria de pokemon? (exibindo o código da categoria)
+-- 7 - Qual o peso mÃ©dio e a altura mÃ©dia de cada categoria de pokemon? (exibindo o cÃ³digo da categoria)
 SELECT AVG(peso) AS PESO_MEDIO, AVG(altura) AS ALTURA_MEDIA, codCategoria
 FROM Pokemon
 GROUP BY codCategoria
 ORDER BY codCategoria
+
 
 
