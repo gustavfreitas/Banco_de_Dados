@@ -1,5 +1,5 @@
 -- 8 - Quantos funcionários estão em cada profissão? Agrupe por JobId.
-SELECT COUNT(*) AS DISTRUIÇÃO_DE_FUNCIONÁRIOS_POR_SETOR
+SELECT COUNT(*) AS DISTRUIÇÃO_DE_FUNCIONÁRIOS_POR_SETOR, job_id
 FROM Employee
 group by job_id
 
@@ -24,3 +24,4 @@ SELECT UPPER(SUBSTRING(title, 1,1)) AS LETRA_INICIAL, COUNT(*) AS TOTAL
 FROM titles
 GROUP BY UPPER(SUBSTRING(title, 1,1))
 ORDER BY LETRA_INICIAL
+
