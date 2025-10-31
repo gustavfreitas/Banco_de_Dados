@@ -15,12 +15,12 @@ SELECT fname, job_desc
 FROM employee as E INNER JOIN jobs AS J on E.job_id = J.job_id
 ORDER BY fname ASC
 
--- 2 - Utilize as tabelas Publishers e Employee, e exiba cada editora com seus respectivos funcion·rios.
+-- 2 - Utilize as tabelas Publishers e Employee, e exiba cada editora com seus respectivos funcion√°rios.
 SELECT fname, pub_name
 FROM publishers AS P INNER JOIN employee AS E ON E.pub_id = P.pub_id
 ORDER BY fname ASC
 
--- 3 - Exiba uma lista com os cargos, e a quantidade de funcion·rios de cada cargo.
+-- 3 - Exiba uma lista com os cargos, e a quantidade de funcion√°rios de cada cargo.
 SELECT job_desc, COUNT(*) AS FUNCIONARIOS_POR_CARGO
 FROM employee as E INNER JOIN jobs AS J on E.job_id = J.job_id 
 GROUP BY job_desc
@@ -33,14 +33,16 @@ WHERE pub_name IS NOT NULL
 GROUP BY pub_name
 ORDER BY COUNT(title) DESC
 
--- 5 - Exiba o nome das editoras que possuem um funcion·rio "Designer" contratado em 1990
-SELECT
+-- 5 - Exiba o nome das editoras que possuem um funcion√°rio "Designer" contratado em 1990
+SELECT pub_name, e.fname
 FROM 
 	publishers as P 
 Inner Join 
-	employee as E ON E.pub_id = P.pub_id 
+	employee as E ON P.pub_id = E.pub_id 
 Inner Join 
-	jobs as J ON P.pub_id = J.job_id 
+	jobs as J ON e.job_id = J.job_id
+where e.job_id = '14' and hire_date = '19901224'
+
 
 
 
