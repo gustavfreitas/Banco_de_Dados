@@ -15,8 +15,8 @@ FROM TIPOPOKEMON
 
 -- 7 - Para cada pokemon, exiba seu nome e o nome de quem ele evolui
 
-SELECT PRIMARIO.nome, EVOLUCAO.evoluiDe
-FROM Pokemon AS PRIMARIO INNER JOIN POKEMON AS EVOLUCAO ON PRIMARIO.codPokemon = EVOLUCAO.evoluiDe
+SELECT EVOLUCAO.nome, PRIMARIO.nome
+FROM Pokemon AS PRIMARIO INNER JOIN POKEMON AS EVOLUCAO ON PRIMARIO.evoluiDe = EVOLUCAO.codPokemon
 
 -- 8 - Exiba uma relação de cada pokémon e seus tipos.
 
@@ -37,4 +37,5 @@ SELECT C.nmCategoria, COUNT(P.codPokemon) as QUANTIDADE_POKEMONS
 FROM Pokemon AS P INNER JOIN Categoria AS C ON P.codCategoria = C.codCategoria
 GROUP BY C.nmCategoria
 ORDER BY COUNT(P.codPokemon) DESC
+
 
