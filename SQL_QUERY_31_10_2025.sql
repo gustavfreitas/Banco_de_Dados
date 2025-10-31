@@ -43,6 +43,9 @@ Inner Join
 	jobs as J ON e.job_id = J.job_id
 where e.job_id = '14' and hire_date = '19901224'
 
+-- 6 - Exiba os autores que vivem na mesma cidade de uma editora. (o join não é realizado pelas chaves)
+SELECT au_fname, au_lname, pub_name
+FROM authors as A inner join publishers as P ON a.state = p.state
 
 
 
