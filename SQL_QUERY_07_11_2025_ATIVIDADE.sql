@@ -38,6 +38,9 @@ INSERT INTO PRODUTO
 VALUES
 ()
 
+
+
+
 UPDATE Produto
 Set precProduto = 224.90
 Where idProduto = '13'
@@ -45,7 +48,7 @@ Where idProduto = '13'
 INSERT INTO Produto
 (nomeProduto,descProduto, precProduto,descontoPromocao,idCategoria, ativoProduto, idUsuario, qtdMinEstoque)
 VALUES
-('Camiseta Uber Blue Lock', 'MarcaGeneric ModeloGeneric IdadeAdultos Gênero: Unissex MarcaSona ModeloSona Gênero: Idade adulta unissex Tipo de roupa Formato de tamanho unitário É esportivo? Não são recomendados: Tipo de laser Tecido: poliéster Composto de poliéster Material principal: Microfibra Tipo de mangá: Curto Tipo de formato: redondo CalceRecto Form. É adequado para gravidez: Não', 78.16, 15.00, '3061', '1', '4054', 100)
+('Camiseta Uber Blue Lock', 'MarcaGeneric ModeloGeneric IdadeAdultos GÃªnero: Unissex MarcaSona ModeloSona GÃªnero: Idade adulta unissex Tipo de roupa Formato de tamanho unitÃ¡rio Ã‰ esportivo? NÃ£o sÃ£o recomendados: Tipo de laser Tecido: poliÃ©ster Composto de poliÃ©ster Material principal: Microfibra Tipo de mangÃ¡: Curto Tipo de formato: redondo CalceRecto Form. Ã‰ adequado para gravidez: NÃ£o', 78.16, 15.00, '3061', '1', '4054', 100)
 
 SELECT *
 FROM Estoque
@@ -68,7 +71,50 @@ VALUES
 SELECT *
 FROM Usuario
 
+select *
+From vw_fase5
+ORDER BY DATAPEDIDO DESC
 
 
 select *
 from Categoria
+
+
+SELECT *
+FROM Aplicacao
+
+SELECT *
+FROM Pedido
+
+INSERT INTO Pedido
+(idCliente, idStatus, dataPedido, idTipoPagto, idEndereco, idAplicacao)
+VALUES
+('2506', '3', GETDATE() , '223', '2585', '2')
+
+-- ID PEDIDO 1092
+-- ID CLIENTE 2506
+-- ID STATUS 3
+-- IDTIPOPAGTO 223
+-- ID ENDERECO 2585
+-- ID APLICACAO 2
+
+-- ID PRODUTO 2250
+-- ID PRODUTO 18
+
+INSERT INTO ItemPedido
+(idProduto, idPedido, qtdProduto, precoVendaItem)
+VALUES
+(18, 1092, 1, 2990.00)
+
+SELECT *
+FROM ItemPedido
+
+
+SELECT *
+FROM StatusPedido
+
+SELECT *
+FROM TipoPagamento
+
+SELECT *
+FROM
