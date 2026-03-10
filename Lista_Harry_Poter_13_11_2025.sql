@@ -1,4 +1,4 @@
--- 1. Quantos personagens est„o cadastrados?
+-- 1. Quantos personagens est√£o cadastrados?
 SELECT COUNT(*) AS TOTAL_PERSONAGENS
 FROM HP_Personagens
 
@@ -6,13 +6,13 @@ FROM HP_Personagens
 SELECT COUNT(*) AS TOTAL_MAGIAS
 FROM HP_Magias
 
--- 3. A maioria dos personagens È homem ou mulher?
+-- 3. A maioria dos personagens √© homem ou mulher?
 SELECT Gender, Count(*) AS TOTAL_GENEROS
 FROM HP_PERSONAGENS
 GROUP BY Gender
 ORDER BY COUNT(*) DESC
 
--- 4. Qual a profiss„o mais comum dentre os personagens?
+-- 4. Qual a profiss√£o mais comum dentre os personagens?
 SELECT JOB, COUNT(*) AS TOTAL_EMPREGOS
 FROM HP_Personagens
 GROUP BY JOB
@@ -29,30 +29,30 @@ FROM HP_Personagens
 WHERE JOB = 'Student'
 GROUP BY HOUSE
 
--- 7. Quantos personagens j· morreram?
-SELECT COUNT(DEATH) AS ESCALA«√O_VASCO
+-- 7. Quantos personagens j√° morreram?
+SELECT COUNT(DEATH) AS ESCALA√á√ÉO_VASCO
 FROM HP_Personagens
 
--- 8. H· personagens com Patronos que s„o c„es ou gatos?
+-- 8. H√° personagens com Patronos que s√£o c√£es ou gatos?
 SELECT DISTINCT PATRONUS, Name
 FROM HP_Personagens
 WHERE Patronus = 'Cat' or Patronus = 'Wolf'
 
--- 9. Dentre as espÈcies de personagens que n„o s„o humanos, quantos personagens cada uma tem?
+-- 9. Dentre as esp√©cies de personagens que n√£o s√£o humanos, quantos personagens cada uma tem?
 SELECT DISTINCT SPECIES, COUNT(SPECIES) AS TOTAL
 FROM HP_Personagens
 WHERE NOT Species = 'HUMAN'
 GROUP BY Species
 ORDER BY COUNT(SPECIES) DESC
 
--- 10. Um professor tem uma teoria, que nenhum personagem half-blood tem cabelo preto. Ele est· certo? --> Errado.
+-- 10. Um professor tem uma teoria, que nenhum personagem half-blood tem cabelo preto. Ele est√° certo? --> Errado.
 SELECT DISTINCT [Hair colour], COUNT([Blood status]) AS  TOTAL
 FROM HP_Personagens
 WHERE [Blood status] = 'Half-blood'
 GROUP BY [Hair colour]
 ORDER BY COUNT([Blood status]) DESC
 
--- 11. Quem s„o os personagens que utilizam uma varinha com algum elemento relacionado ‡ dragıes?
+-- 11. Quem s√£o os personagens que utilizam uma varinha com algum elemento relacionado √† drag√µes?
 SELECT WAND, Name
 FROM HP_Personagens
 WHERE WAND like '%dragon%'
@@ -68,7 +68,7 @@ SELECT *
 FROM HP_Magias
 WHERE NAME = 'ORCHIDEOUS'
 
--- 14. Quais s„o magias que possuem efeitos relacionados ‡ ·gua?
+-- 14. Quais s√£o magias que possuem efeitos relacionados √† √°gua?
 SELECT DISTINCT EFFECT, Name
 FROM HP_Magias
 WHERE EFFECT LIKE '%Water%'
